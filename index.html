@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mass-Mail Dispatcher</title>
+  <!-- <script src="https://cdn.emailjs.com/dist/email.min.js"></script> -->
+  <link rel="stylesheet" href="style.css"> 
+  <link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+
+
+</head>
+
+<body>
+  <nav>
+    <ul>
+      </li><a href=""><h1>Exposys Data Lab</h1></a></li>
+    </ul>
+  </nav>
+
+<div class="bg">
+  <div class="container">
+    <div class="select animated fadeInDown delay 4s">
+      <h1 id="head">Mass Mail Dispatcher</h1>
+      <input type="file" id="upload" accept="text/csv"> <!--form uploading -->
+    </div>
+    <div class="mailInfo"> <!--email form-->
+      <form onsubmit="sendEmail(); reset(); return false;">
+        <h2 id="box-heading">WRITE YOUR MAIL HERE</h2>
+        <p><input type="email" id="from" placeholder="From(Email ID)" required></p>
+        <p><input type="text" id="subject" placeholder="Subject" required></p>
+        <p><textarea id="msg" cols="12" rows="12" placeholder="body" required></textarea></p>
+        <p><button type="submit" id="submit">Send</button></p>
+      </form>
+    </div>
+  </div>
+  <hr>
+  <div class="tables"> <!--tables are used for sorting valid and invalid mails-->
+    <div class="valTab">
+      <table id="val">  <!--table 1 for valid mails-->
+        <tr>
+          <td>
+            <h2>Valid Emails : <span id="valcount"></span></h2>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div class="invalTab">
+      <table id="inval">  <!--table 2 for invalid mails-->
+        <tr>
+          <td>
+            <h2>Invalid Emails : <span id="invalcount"></span></h2>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</section>
+<hr>
+
+<!-- external javascript -->
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+<script src="main.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+<script>var wow=new WOW(
+  {
+    boxclass:'wow',
+    animateClass: 'animated',
+    offset:0,
+    mobile:true,
+    live:true,
+    callback:function (box){
+    },
+    scrollContainer:null,
+    resetAnimation:true,
+  }
+); 
+wow.init();
+</script>
+<div class="footer-basic">
+  <footer>
+    <p class="copyright">By <a href="https://www.linkedin.com/in/ankita-das-bb01a7228/" target="_blank">Ankita Das</a></p>
+  </footer>
+</div>
+
+</body>
+
+</html>
